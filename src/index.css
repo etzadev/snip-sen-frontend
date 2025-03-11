@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+.custom-dark {
+  background: #040f1a;
+}
+
+@layer components {
+  .prose-dark {
+    @apply prose;
+
+    --tw-prose-body: #e0e0e0;
+    --tw-prose-headings: #e0e0e0;
+    --tw-prose-lead: #cccccc;
+    --tw-prose-links: #42a5f5;
+    --tw-prose-bold: #ffffff;
+    --tw-prose-counters: #bbbbbb;
+    --tw-prose-bullets: #bbbbbb;
+    --tw-prose-hr: #4d4d4d;
+    --tw-prose-quotes: #b3b3b3;
+    --tw-prose-quote-borders: #2c2c2c;
+    --tw-prose-captions: #aaaaaa;
+    --tw-prose-code: #82b1ff;
+    --tw-prose-pre-code: #82b1ff;
+    --tw-prose-pre-bg: #121212;
+    --tw-prose-th-borders: #2c2c2c;
+    --tw-prose-td-borders: #2c2c2c;
+  }
+
+  .prose-dark h1,
+  .prose-dark h2,
+  .prose-dark h3,
+  .prose-dark h4 {
+    color: var(--tw-prose-headings);
+  }
+
+  .prose-dark a {
+    color: var(--tw-prose-links);
+  }
+
+  .prose-dark strong {
+    color: var(--tw-prose-bold);
+  }
+
+  .prose-dark ol > li::before {
+    color: var(--tw-prose-counters);
+  }
+
+  .prose-dark ul > li::before {
+    background-color: var(--tw-prose-bullets);
+  }
+
+  .prose-dark hr {
+    border-color: var(--tw-prose-hr);
+  }
+
+  .prose-dark blockquote {
+    color: var(--tw-prose-quotes);
+    border-left-color: var(--tw-prose-quote-borders);
+  }
+
+  .prose-dark code {
+    color: var(--tw-prose-code);
+  }
+
+  .prose-dark pre {
+    color: var(--tw-prose-pre-code);
+    background-color: var(--tw-prose-pre-bg);
+  }
+
+  .prose-dark thead {
+    color: var(--tw-prose-th-borders);
+    border-bottom-color: var(--tw-prose-th-borders);
+  }
+
+  .prose-dark tbody tr {
+    border-bottom-color: var(--tw-prose-td-borders);
+  }
+}
