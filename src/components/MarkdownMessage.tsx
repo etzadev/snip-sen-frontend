@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import PrismJs from "prismjs";
 import "prismjs/plugins/toolbar/prism-toolbar.js";
 import "prismjs/plugins/toolbar/prism-toolbar.css";
-import "prismjs/themes/prism-holi.css";
+import "../styles/prism-holi.css";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-python";
@@ -43,8 +43,15 @@ export default function MarkdownMessage(props: MarkdownMessageProps) {
   });
 
   useEffect(() => {
-    PrismJs.highlightAll();
+    const timer = setTimeout(() => {
+      PrismJs.highlightAll();
+    }, 1000);
+    return () => clearTimeout(timer);
   }, [props.ia_output]);
+
+  useEffect(() => {
+    PrismJs.highlightAll();
+  }, []);
 
   if (props.isLoading) return <Loader />;
 
